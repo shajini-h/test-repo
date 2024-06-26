@@ -1,0 +1,11 @@
+{
+    "name": "test-repo-for-cicd-pipeline",
+    "version": "1.0.0",
+    "description": "Setting up CICD pipeline",
+    "scripts": {
+      "build-nsl": "echo 'Running dummy build-nsl command...'"
+    },
+    "author": "cc",
+    "license": "cc"
+  }
+  
