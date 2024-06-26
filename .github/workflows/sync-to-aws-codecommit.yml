@@ -31,7 +31,7 @@ jobs:
 
       - name: Push to AWS CodeCommit
         run: |
-          git remote add codecommit https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
+          git remote add codecommit git@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
           git checkout master
           git pull origin master
