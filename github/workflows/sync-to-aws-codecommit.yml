@@ -3,7 +3,7 @@ name: Sync to AWS CodeCommit
 on:
   push:
     branches:
-      - master  # Trigger on pushes to master branch
+      - main  # Trigger on pushes to main branch
 
 jobs:
   sync:
@@ -13,9 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Push to GitHub master branch
+      - name: Push to GitHub main branch
         run: |
-          git push origin master
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -30,6 +30,6 @@ jobs:
         run: |
           git remote add codecommit https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
-          git checkout master
-          git pull origin master
-          git push codecommit master
+          git checkout main
+          git pull origin main
+          git push codecommit main
