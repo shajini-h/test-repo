@@ -29,14 +29,16 @@ jobs:
         #   git config --global user.email "actions@github.com"
         #   git config --global user.name "GitHub Actions"
         #           git config credential.https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline.username ${{ AWS_USERNAME_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}
+        # git config --global credential.helper store
+        # echo "https://${{ secrets.AWS_USERNAME_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}:${{ secrets.AWS_PASSWORD_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}@github.com" > ~/.git-credentials
+        
         run: |
           git config --global credential.helper '!aws codecommit credential-helper $@'
           git config --global credential.UseHttpPath true
-          git config credential.helper 'store'
 
       - name: Push to AWS CodeCommit
         run: |
-          git remote add codecommit https://${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
+          git remote add codecommit https://${{ secrets.AWS_USERNAME_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}:${{ secrets.AWS_PASSWORD_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
           git checkout master
           git pull origin master
