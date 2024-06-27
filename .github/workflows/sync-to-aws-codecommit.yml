@@ -15,8 +15,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install ESLint
+        run: npm install eslint eslint-plugin-react
+
       - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
