@@ -25,9 +25,15 @@ jobs:
           git config --global credential.helper '!aws codecommit credential-helper $@'
           git config --global credential.UseHttpPath true
 
-      - name: Push to AWS CodeCommit
+      - name: Fetch from AWS CodeCommit
         run: |
           git remote add codecommit https://${{ secrets.AWS_USERNAME_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}:${{ secrets.AWS_PASSWORD_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
-          git checkout master
-          git push codecommit master
+          
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+
+      - name: Push to AWS CodeCommit
+        run: |
+            git checkout master
+            git push codecommit master
