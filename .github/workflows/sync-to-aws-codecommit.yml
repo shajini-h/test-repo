@@ -30,5 +30,6 @@ jobs:
           git remote add codecommit https://${{ secrets.AWS_USERNAME_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}:${{ secrets.AWS_PASSWORD_CENTRICORE_SHA_HTTPS_GIT_CREDS_FOR_CODECOMMIT }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
           git checkout codecommit/master
-          git rebase origin/master
+          
+          git pull origin master
           git push codecommit master
