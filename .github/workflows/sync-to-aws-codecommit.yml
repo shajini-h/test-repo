@@ -14,9 +14,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Git config
+        # run: |
+        #   git config --global user.email "actions@github.com"
+        #   git config --global user.name "GitHub Actions"
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
+          git config --global credential.helper '!aws codecommit credential-helper $@'
+          git config --global credential.UseHttpPath true
 
       # - name: Push to GitHub master branch
       #   run: |
@@ -31,7 +34,7 @@ jobs:
 
       - name: Push to AWS CodeCommit
         run: |
-          git remote add codecommit https://${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
+          git remote add codecommit https://${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test-repo-for-cicd-pipeline
           git fetch codecommit
           git checkout master
           git pull origin master
