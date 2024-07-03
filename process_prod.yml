@@ -1,0 +1,18 @@
+apps:
+  - script: src/index.js
+    log_date_format : "YYYY-MM-DD HH:mm:ss,SSS"
+    env:
+      NODE_PATH: "./src"
+    name: test-repo
+    node_args: "-r dotenv/config -r esm" ## node_args before run node
+    # node_args: "-r dotenv/config"
+    #node_args: "-r dotenv/config --experimental-modules" ## node_args before run node
+    args: "dotenv_config_path=./.env.production" ## args for index.js
+    max_memory_restart: "1024M"
+    # cron_restart: '0 3 * * FRI' #0 3 * * FRI restart at friday 3 am
+    watch: false
+    ignore_watch: ["node_modules"]
+    #instances: "1"
+    #exec_mode: "cluster"
+    #interpreter: "node@17.0.0"
+
