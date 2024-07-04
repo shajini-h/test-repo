@@ -13,6 +13,7 @@
   "buildDate": 1719391201503,
   "dependencies": {
     "craco": "^0.0.3",
+    "esm": "^3.2.25",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
