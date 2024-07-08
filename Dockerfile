@@ -1,10 +1,10 @@
 # Use the official Node.js image.
 # https://hub.docker.com/_/node
-# FROM node:16.13.2-alpine
+FROM node:16.13.2-alpine
 
 # Use docker images from AWS, to avoid docker pull rate limit
 # `aws codebuild list-curated-environment-images`
-FROM aws/codebuild/amazonlinux2-x86_64-standard:4.0
+# FROM aws/codebuild/amazonlinux2-x86_64-standard:4.0 // doesn't exist
 
 # Create and change to the app directory.
 WORKDIR /usr/src/app
