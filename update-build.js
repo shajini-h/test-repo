@@ -1,5 +1,7 @@
 const fs = require("fs");
 const filePath = "./package.json";
+// import fs from "fs";
+// import filePath from "./package.json" with { type: "json" };
 
 const packageJson = JSON.parse(fs.readFileSync(filePath).toString());
 packageJson.buildDate = new Date().getTime();

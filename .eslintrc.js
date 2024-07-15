@@ -1,12 +1,23 @@
 module.exports = {
+    parser: '@babel/eslint-parser',
+    parserOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      requireConfigFile: false,
+    },
     env: {
       browser: true,
       commonjs: true,
       es6: true,
       node: true
     },
-    // extends: "eslint:recommended",
-    extends: ["eslint:recommended", "plugin:react/recommended"],
+    extends: [
+      "eslint:recommended", 
+      'plugin:import/errors',
+      'plugin:import/warnings',
+      'plugin:import/typescript',
+      "plugin:react/recommended"
+    ],
     parserOptions: {
       ecmaFeatures: {
         experimentalObjectRestSpread: true,
