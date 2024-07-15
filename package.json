@@ -11,7 +11,7 @@
   "license": "cc",
   "main": "index.js",
   "keywords": [],
-  "buildDate": 1721026514087,
+  "buildDate": 1721034817535,
   "dependencies": {
     "craco": "^0.0.3",
     "esm": "^3.2.25",

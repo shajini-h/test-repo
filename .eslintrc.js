@@ -1,5 +1,4 @@
 module.exports = {
-    parser: '@babel/eslint-parser',
     parserOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -18,13 +17,6 @@ module.exports = {
       'plugin:import/typescript',
       "plugin:react/recommended"
     ],
-    parserOptions: {
-      ecmaFeatures: {
-        experimentalObjectRestSpread: true,
-        jsx: true
-      },
-      sourceType: "module"
-    },
     plugins: ["react", "import"],
     rules: {
       "react/jsx-uses-vars": "error",
