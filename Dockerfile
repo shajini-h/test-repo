@@ -27,7 +27,8 @@ RUN npm run build-nsl
 
 # Expose the port the app runs on (adjust this if needed)
 # match the target group's port on ECS cluster
-EXPOSE 80
+# this is the localhost port on ecs when task is deployed...
+EXPOSE 3000
 
 # define the command to run your app using CMD which defines your runtime.
 # Here we will use node server.js to start your server:
