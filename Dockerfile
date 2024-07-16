@@ -10,7 +10,7 @@ FROM node:16.13.2-alpine
 WORKDIR /usr/src/app
 
 # Install PM2 globally
-RUN npm install -g pm2
+# RUN npm install -g pm2
 
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
@@ -31,5 +31,6 @@ EXPOSE 80
 
 # define the command to run your app using CMD which defines your runtime.
 # Here we will use node server.js to start your server:
-CMD ["pm2-runtime","start","process_prod.yml"]
+# CMD ["pm2-runtime","start","process_prod.yml"]
+CMD ["npm", "run", "prod"]
 ### trigger code pipeline
