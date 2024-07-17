@@ -7,7 +7,6 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "cicd-container"
           ContainerPort: 8081
-          HostPort: 8081
 # Optional properties
 #         PlatformVersion: "LATEST"
 #         NetworkConfiguration:
