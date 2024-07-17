@@ -6,7 +6,8 @@ Resources:
         TaskDefinition: "arn:aws:ecs:ap-southeast-1:353679870343:task-definition/cicd-task-definition:3"
         LoadBalancerInfo:
           ContainerName: "cicd-container"
-          ContainerPort: 80
+          ContainerPort: 8081
+          HostPort: 8081
 # Optional properties
 #         PlatformVersion: "LATEST"
 #         NetworkConfiguration:
