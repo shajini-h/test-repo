@@ -5,7 +5,7 @@
   "scripts": {
     "build-nsl": "node ./update-build.js&&craco build",
     "start": "craco start",
-    "prod": "serve -s build"
+    "prod": "serve -s build -l 8081"
   },
   "author": "cc",
   "license": "cc",
