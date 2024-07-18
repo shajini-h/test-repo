@@ -5,13 +5,13 @@
   "scripts": {
     "build-nsl": "node ./update-build.js&&craco build",
     "start": "craco start",
-    "prod": "serve -s build -l 8081"
+    "prod": "serve -s build"
   },
   "author": "cc",
   "license": "cc",
   "main": "index.js",
   "keywords": [],
-  "buildDate": 1721034817535,
+  "buildDate": 1721287628011,
   "dependencies": {
     "craco": "^0.0.3",
     "esm": "^3.2.25",
