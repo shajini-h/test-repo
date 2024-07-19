@@ -1,6 +1,6 @@
 # Use the official Node.js image.
 # https://hub.docker.com/_/node
-FROM node:16.13.2-alpine
+FROM node:16.20.1-alpine3.18
 
 # Use docker images from AWS, to avoid docker pull rate limit
 # `aws codebuild list-curated-environment-images`
