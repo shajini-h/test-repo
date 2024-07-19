@@ -6,4 +6,4 @@ Resources:
         TaskDefinition: "arn:aws:ecs:ap-southeast-1:353679870343:task-definition/cicd-task-definition:4"
         LoadBalancerInfo:
           ContainerName: "cicd-container"
-          ContainerPort: ${REACT_APP_PORT} # used by CodeDeploy and ECS to map incoming traffic to the correct port on the container
+          ContainerPort: 8081 # used by CodeDeploy and ECS to map incoming traffic to the correct port on the container
