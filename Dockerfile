@@ -28,10 +28,10 @@ RUN npm run build-nsl
 # indicates the ports on which a container listens for connections
 # match the target group's port on ECS cluster
 ARG REACT_APP_PORT
+ENV REACT_APP_PORT 8081
 EXPOSE ${REACT_APP_PORT}
 
 # define the command to run your app using CMD which defines your runtime.
 # Here we will use node server.js to start your server:
 # CMD ["pm2-runtime","start","process_prod.yml"]
-CMD ["npm", "run", "prod", "--", "-p", ${REACT_APP_PORT}]
-### trigger code pipeline
+CMD ["sh", "-c", "npm run prod -- -p ${REACT_APP_PORT}"]
